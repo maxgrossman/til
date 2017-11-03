@@ -1,11 +1,13 @@
 var prompt = require('prompt');
 var colors = require('colors/safe');
 var writeFile = require('fs').writeFile;
+var parseInitPrompt = require('../utils').parseInitPrompt;
+
 /**
  * @func init
  * prompts user with info to init .tilrc, then writes it
  */
-module.exports = function () {
+module.exports = () => {
   prompt.message = colors.rainbow('');
   prompt.start();
   prompt.get({
@@ -20,9 +22,7 @@ module.exports = function () {
   }, (err, res) => {
     if (err) { throw new Error('Error building .tilrc'); }
     // add categories
-    const tilrc = { categories: {} };
-    const categories = res.categories.split(',');
-    categories.forEach(cat => { tilrc.categories[cat] = {}; });
+    const tilrc = parseInitPrompt(res.categories);
     // write to file
     writeFile('./.tilrc', JSON.stringify(tilrc), (err) => {
       if (err) { throw new Error('there was an error writing the .tilrc file'); }
