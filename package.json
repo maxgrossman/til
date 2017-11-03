@@ -5,7 +5,19 @@
   "main": "index.js",
   "author": "maxgrossman <m.grossman1813@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "lint": "eslint ."
+  },
   "dependencies": {
     "commander": "^2.11.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.10.0",
+    "eslint-config-semistandard": "^11.0.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1"
   }
 }
