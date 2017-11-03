@@ -1,0 +1,21 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/til
+    docker:
+      - image: circleci/node:6.0.0
+    steps:
+      - checkout
+      # below allows us to use yarn
+      - restore_cache:
+          key: til-{{ checksum "yarn.lock" }}
+      - run: yarn
+      - run: yarn install
+      
+      - save_cache:
+        key: til-{{ checksum "yarn.lock" }}
+        paths:
+          ~/.cache/yarn
+        
+      # lint
+      - run: yarn lint
