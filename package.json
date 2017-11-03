@@ -1,0 +1,11 @@
+{
+  "name": "til",
+  "version": "0.0.1",
+  "description": "cli to remember what you learned.",
+  "main": "index.js",
+  "author": "maxgrossman <m.grossman1813@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^2.11.0"
+  }
+}
