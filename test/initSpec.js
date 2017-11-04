@@ -6,13 +6,11 @@ var parseInitPrompt = require('../utils').parseInitPrompt;
 chai.use(chaiJsonSchema);
 
 const tilrcSchema = {
-  categories: {
-    surfing: {},
-    is: {},
-    great: {},
-    i: {},
-    think: {}
-  }
+  surfing: {},
+  is: {},
+  great: {},
+  i: {},
+  think: {}
 };
 
 describe('til.init()', () => {
