@@ -6,12 +6,19 @@
   "author": "maxgrossman <m.grossman1813@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test": "mocha test"
   },
   "dependencies": {
-    "commander": "^2.11.0"
+    "chai": "^4.1.2",
+    "co-prompt": "^1.0.0",
+    "colors": "^1.1.2",
+    "commander": "^2.11.0",
+    "mocha": "^4.0.1",
+    "prompt": "^1.0.0"
   },
   "devDependencies": {
+    "chai-json-schema": "^1.5.0",
     "eslint": "^4.10.0",
     "eslint-config-semistandard": "^11.0.0",
     "eslint-config-standard": "^10.2.1",
