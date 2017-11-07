@@ -7,9 +7,9 @@
  * @return {object} .tilrc object
  */
 exports.parseInitPrompt = (prompt) => {
-  const tilrc = { categories: {} };
+  const tilrc = {};
   const categories = prompt.split(',');
-  categories.forEach(cat => { tilrc.categories[cat.trim()] = {}; });
+  categories.forEach(cat => { tilrc[cat.trim()] = {}; });
   return tilrc;
 };
 
