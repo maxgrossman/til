@@ -11,14 +11,17 @@ var noTitle = require('./utils').noTitle;
 til
   .version('0.0.1')
   .option('-i, --init', 'initialize your .tilrc')
-  .option('-t, --title', 'name of thing you learned')
-  .option('-c, --category', 'category to which the thing you learned belongs')
+  .option('-t, --title <t>', 'name of thing you learned')
+  .option('-c, --category <c>', 'category to which the thing you learned belongs')
+  .option('-u --update', 'decision to update existing knowledge nugget')
   .parse(process.argv);
 
 // init
 if (til.init) { init(); }
 // categorize
-if (til.category && til.title) { categorize(til.category, til.title); } else {
+if (til.category && til.title) {
+  categorize(til.category, til.title, til.args.join(' '), til.update);
+} else {
   if (til.title) { noCategory(); }
   if (til.category) { noTitle(); }
 }
