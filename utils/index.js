@@ -1,5 +1,3 @@
-var prompt = require('prompt');
-var colors = require('colors');
 // HELPERS //
 
 /**
